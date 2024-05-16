@@ -1,0 +1,36 @@
+.container {
+  padding-left: 11vw;
+  padding-right: 11vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.list_container {
+  display: flex;
+  height: 100%;
+  list-style: none;
+}
+.list_item {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  border-right-width: 1px;
+  font-weight: 600;
+  font-size: x-large;
+  cursor: pointer;
+  /* border: 1px white solid; */
+}
