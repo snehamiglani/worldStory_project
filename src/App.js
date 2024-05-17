@@ -3,6 +3,10 @@ import "./App.css";
 import TopBar from "./Components/TopBar/TopBar";
 import NavBar from "./Components/NavBar/NavBar";
 import HeroSection from "./Components/HeroSection/HeroSection";
+import PostsSection from "./Components/PostsSection/PostsSection";
+import AdviceSection from "./Components/AdviceSection/AdviceSection";
+import Footer from "./Components/Footer/Footer";
+import BottomBar from "./Components/BottomBar/BottomBar";
 
 export default function App() {
   return (
@@ -38,6 +42,11 @@ export default function App() {
           }}
         />
       </section>
+
+      <PostsSection />
+      <AdviceSection />
+      <Footer />
+      <BottomBar />
     </div>
   );
 }

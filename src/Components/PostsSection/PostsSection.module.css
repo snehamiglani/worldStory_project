@@ -1,0 +1,132 @@
+.container {
+  padding-left: 11vw;
+  padding-right: 11vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.bar {
+  width: 100%;
+  height: 0.7rem;
+  background: linear-gradient(90deg, #d00494 3rem, #d5d5d5 3rem);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.secondary_header {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.secondary_header:hover {
+  text-decoration: underline;
+}
+
+.interesting_post_header {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.interesting_post_header:hover {
+  text-decoration: underline;
+}
+
+.latest_post_container {
+  width: 100%;
+  margin-right: 2rem;
+}
+
+.badge_container {
+  display: flex;
+  margin: 1rem 0 0.5rem 0;
+  align-items: center;
+}
+
+.badge {
+  background-color: #d00494;
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  margin: 0.5rem 0.8rem 0.5rem 0;
+  width: fit-content;
+  color: white;
+}
+
+.interesting_card {
+  position: absolute;
+  bottom: -7rem;
+  padding: 1rem 2rem;
+  left: 0;
+  width: 19rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.secondary_secondary_container {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    flex-direction: column;
+  }
+  .secondary_section {
+    display: flex;
+  }
+  .secondary_primary_container {
+    width: 100%;
+    margin-right: 2rem;
+  }
+}
+
+.latest_post_card {
+  display: flex;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .secondary_section {
+    flex-direction: column;
+  }
+  .interesting_card {
+    left: -13.5rem;
+  }
+  .secondary_secondary_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .badge_container {
+    margin: 0.5rem 0 0.25rem 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .latest_post_card {
+    flex-direction: column;
+  }
+  .secondary_header {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+@media screen and (max-width: 534px) {
+  .container {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+  }
+  .image {
+    width: 100%;
+  }
+}

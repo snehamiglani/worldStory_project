@@ -18,6 +18,7 @@
   display: flex;
   align-items: center;
   margin-right: 4vw;
+  cursor: pointer;
 }
 
 .widget_text {
@@ -43,5 +44,25 @@
   align-items: center;
   border-right-width: 1px;
   cursor: pointer;
+  height: 100%;
   /* border: 1px white solid; */
+}
+.list_item:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    justify-content: center;
+  }
+  .inner_container {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .list_container {
+    display: none;
+  }
+  .widget {
+    margin-right: 0;
+  }
 }

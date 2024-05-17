@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <div className={styles.container}>
       <div style={{ display: "flex" }}>
-        <div>
+        <div className={styles.hamburger}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -21,7 +21,7 @@ export default function NavBar() {
             />
           </svg>
         </div>
-        <div style={{ display: "flex", marginLeft: "1.5rem" }}>
+        <div className={styles.logo_container}>
           <div className={styles.logo} style={{ color: "#d00494" }}>
             WORLD
           </div>
@@ -34,7 +34,11 @@ export default function NavBar() {
         <li className={styles.list_item}>LIFESTYLE</li>
         <li className={styles.list_item}>TRAVEL</li>
       </ul>
-      <img src="/social_media_icons.png" alt="" />
+      <img
+        src="/social_media_icons.png"
+        alt=""
+        className={styles.social_media_icons}
+      />
     </div>
   );
 }

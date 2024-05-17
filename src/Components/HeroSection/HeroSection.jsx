@@ -4,13 +4,13 @@ import styles from "./HeroSection.module.css";
 export default function HeroSection() {
   return (
     <div className={styles.container}>
-      <div style={{ display: "flex", width: "100%" }}>
+      <div className={styles.main_container}>
         <div className={styles.main_image_container}>
           <div className={styles.main_image_content}>
             <div style={{ fontWeight: "700", fontSize: "1.8rem" }}>
               LATEST FROM THE WEB FOR YOU
             </div>
-            <div style={{ display: "flex", margin: "0.5rem 0 1.5rem 0" }}>
+            <div className={styles.badge_container}>
               <div className={styles.badge}>FASHION</div>
               <div className={styles.badge}>LIFESTYLE</div>
               <div
@@ -33,7 +33,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className={styles.secondary_container}>
           <SecondaryImage imageUrl={"/rectangle_3.png"} />
           <SecondaryImage imageUrl={"/rectangle_4.png"} />
           <SecondaryImage imageUrl={"/rectangle_5.png"} />
@@ -46,7 +46,7 @@ export default function HeroSection() {
 function SecondaryImage({ imageUrl }) {
   return (
     <div className={styles.secondary_image_container}>
-      <img src={imageUrl} alt="" className="secondary_image" />
+      <img src={imageUrl} alt="" className={styles.secondary_image} />
       <div className={styles.secondary_image_content}>
         <div className={styles.badge}>FASHION</div>
         <div>
