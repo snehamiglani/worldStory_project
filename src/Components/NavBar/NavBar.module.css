@@ -23,7 +23,6 @@
 
 .logo_container {
   display: flex;
-  margin-left: 1.5rem;
 }
 
 .logo {
@@ -53,6 +52,10 @@
   color: white;
 }
 
+.hamburger {
+  display: none;
+}
+
 @media screen and (max-width: 1400px) {
   .social_media_icons {
     display: none;
@@ -67,6 +70,7 @@
     display: none;
   }
   .hamburger {
+    display: block;
     position: absolute;
     left: 0;
     margin-left: 11vw;
@@ -79,6 +83,7 @@
     padding-right: 5vw;
   }
   .hamburger {
+    display: block;
     margin-left: 4.5vw;
   }
 }
@@ -88,4 +93,36 @@
     padding-left: 0.5vw;
     padding-right: 0.5vw;
   }
+}
+
+.phone_nav {
+  position: absolute;
+  z-index: 100;
+  top: 9rem;
+  width: 70vw;
+}
+
+.phone_list_container {
+  background-color: #d00494;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  list-style: none;
+}
+.phone_list_item {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  font-weight: 600;
+  font-size: x-large;
+  cursor: pointer;
+  /* border: 1px white solid; */
+}
+.phone_list_item:hover {
+  background-color: white;
+  color: black;
 }
