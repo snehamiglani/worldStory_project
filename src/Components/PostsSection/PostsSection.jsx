@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PostsSection.module.css";
 
 const posts = [
@@ -19,6 +19,8 @@ const interestingPosts = [
 ];
 
 export default function PostsSection() {
+  const [headerText, setHeaderText] = useState("INTERESTING");
+
   return (
     <div className={styles.container}>
       <div className={styles.latest_post_container}>
@@ -30,7 +32,7 @@ export default function PostsSection() {
       </div>
       <div className={styles.secondary_section}>
         <div className={styles.secondary_primary_container}>
-          <div className={styles.header}>INTERESTING</div>
+          <div className={styles.header}>{headerText}</div>
           <div className={styles.bar}></div>
           <div>
             {interestingPosts.map((post, i) => {
@@ -39,7 +41,7 @@ export default function PostsSection() {
           </div>
         </div>
         <div>
-          <div className={styles.header}>INTERESTING</div>
+          <div className={styles.header}>{headerText}</div>
           <div className={styles.bar}></div>
           <div className={styles.secondary_secondary_container}>
             <img src="/rectangle_16.jpg" alt="" className={styles.image} />

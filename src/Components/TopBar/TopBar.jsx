@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./TopBar.module.css";
 
-export default function TopBar() {
+export default function TopBar({ initialDate, initialLocation }) {
+  const [date, setDate] = useState(initialDate);
+  const [location, setLocation] = useState(initialLocation);
+
+  useEffect(() => {
+    // Simulate fetching updated data
+    const fetchData = () => {
+      setTimeout(() => {
+        setDate("04, JUNE 2019");
+        setLocation("LOS ANGELES 75.F");
+      }, 2000); // Delay of 2 seconds
+    };
+
+    fetchData();
+
+    // Cleanup function (if necessary)
+    return () => {
+      // Perform any necessary cleanup
+    };
+  }, []); // Empty dependency array to run effect only once
+
   return (
     <div className={styles.container}>
       <div className={styles.inner_container}>
@@ -22,7 +42,7 @@ export default function TopBar() {
               />
             </svg>
           </div>
-          <div className={styles.widget_text}>03, JUNE 2019</div>
+          <div className={styles.widget_text}>{date}</div>
         </div>
         <div className={styles.widget}>
           <div>
@@ -41,7 +61,7 @@ export default function TopBar() {
               />
             </svg>
           </div>
-          <div className={styles.widget_text}>NEW YORK 55.F</div>
+          <div className={styles.widget_text}>{location}</div>
         </div>
       </div>
       <div>
