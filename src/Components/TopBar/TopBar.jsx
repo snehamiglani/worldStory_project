@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./TopBar.module.css";
 
-export default function TopBar() {
+export default function TopBar({ initialDate, initialTemp, initialItems }) {
+  // State hooks to manage the date and temperature
+  const [date, setDate] = useState(initialDate);
+  const [temperature, setTemperature] = useState(initialTemp);
+  const [items, setItems] = useState(initialItems);
+
+  // Effect hook to simulate data updates
+  useEffect(() => {
+    const updateDateAndTemp = () => {
+      setTimeout(() => {
+        setDate("10. JUNE 2024");
+        setTemperature("NEW YORK 70°F");
+      }, 2000); // Update date and temp after 2 seconds
+    };
+
+    updateDateAndTemp();
+
+    return () => {
+      // Cleanup if needed
+    };
+  }, []); // Empty dependency array to run effect only once
+
   return (
     <div className={styles.container}>
       <div className={styles.inner_container}>
@@ -18,11 +39,11 @@ export default function TopBar() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
               />
             </svg>
           </div>
-          <div className={styles.widget_text}>03, JUNE 2019</div>
+          <div className={styles.widget_text}>{date}</div>
         </div>
         <div className={styles.widget}>
           <div>
@@ -41,15 +62,14 @@ export default function TopBar() {
               />
             </svg>
           </div>
-          <div className={styles.widget_text}>NEW YORK 55.F</div>
+          <div className={styles.widget_text}>{temperature}</div>
         </div>
       </div>
       <div>
         <ul className={styles.list_container}>
-          <li className={styles.list_item}>NEWS</li>
-          <li className={styles.list_item}>FASHION</li>
-          <li className={styles.list_item}>LIFESTYLE</li>
-          <li className={styles.list_item}>TRAVEL</li>
+          {items.map((item, index) => (
+            <li key={index} className={styles.list_item}>{item}</li>
+          ))}
         </ul>
       </div>
     </div>
