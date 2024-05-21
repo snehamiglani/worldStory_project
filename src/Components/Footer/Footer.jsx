@@ -1,28 +1,7 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React from "react";
 import styles from "./Footer.module.css";
 
-function subscriptionReducer(state, action) {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 };
-    default:
-      throw new Error();
-  }
-}
-
 export default function Footer() {
-  const [clickCount, dispatch] = useReducer(subscriptionReducer, { count: 0 });
-  const emailInputRef = useRef(null);
-
-  useEffect(() => {
-    console.log('Footer component mounted');
-    emailInputRef.current.focus();
-  }, []);
-
-  const handleSubscribeClick = () => {
-    dispatch({ type: 'increment' });
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.secondary_container}>
@@ -61,17 +40,11 @@ export default function Footer() {
         <div className={styles.header}>NEWSLETTER</div>
         <div className={styles.bar}></div>
         <input
-          ref={emailInputRef}
           className={styles.email_input}
           type="text"
           placeholder="Enter Your Email Address"
         />
-        <div className={styles.button} onClick={handleSubscribeClick}>
-          SUBSCRIBE
-        </div>
-        <div>
-          Button clicked {clickCount.count} times
-        </div>
+        <div className={styles.button}>SUBSCRIBE</div>
         <div
           style={{
             height: "1px",
@@ -203,7 +176,7 @@ function PopularPost({ imageUrl }) {
   return (
     <>
       <div style={{ display: "flex", cursor: "pointer" }}>
-          <img
+        <img
           src={imageUrl}
           alt=""
           style={{ objectFit: "cover", marginRight: "1rem" }}
@@ -227,4 +200,3 @@ function PopularPost({ imageUrl }) {
     </>
   );
 }
-
