@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleSubscribeClick = () => {
+    setClickCount(clickCount + 1);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.secondary_container}>
@@ -44,7 +50,12 @@ export default function Footer() {
           type="text"
           placeholder="Enter Your Email Address"
         />
-        <div className={styles.button}>SUBSCRIBE</div>
+        <div className={styles.button} onClick={handleSubscribeClick}>
+          SUBSCRIBE
+        </div>
+        <div>
+          Button clicked {clickCount} times
+        </div>
         <div
           style={{
             height: "1px",
