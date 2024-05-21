@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
+  const [badgeText, setBadgeText] = useState("FASHION");
+  const [date, setDate] = useState("03. JUNE 2019");
+
+  useEffect(() => {
+    // Simulating asynchronous data fetching
+    const fetchData = () => {
+      setTimeout(() => {
+        setBadgeText("LIFESTYLE");
+        setDate("10. JUNE 2019");
+      }, 2000); // Delay of 2 seconds
+    };
+
+    fetchData();
+
+    // Cleanup function (optional)
+    return () => {
+      // Perform cleanup if necessary
+    };
+  }, []); // Empty dependency array to run effect only once
+
   return (
     <div className={styles.container}>
       <div className={styles.main_container}>
@@ -11,7 +31,7 @@ export default function HeroSection() {
               LATEST FROM THE WEB FOR YOU
             </div>
             <div className={styles.badge_container}>
-              <div className={styles.badge}>FASHION</div>
+              <div className={styles.badge}>{badgeText}</div>
               <div className={styles.badge}>LIFESTYLE</div>
               <div
                 style={{
@@ -23,7 +43,7 @@ export default function HeroSection() {
               >
                 &nbsp;
               </div>
-              <div>03. JUNE 2019</div>
+              <div>{date}</div>
             </div>
             <div>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -34,16 +54,16 @@ export default function HeroSection() {
         </div>
 
         <div className={styles.secondary_container}>
-          <SecondaryImage imageUrl={"/rectangle_3.png"} />
-          <SecondaryImage imageUrl={"/rectangle_4.png"} />
-          <SecondaryImage imageUrl={"/rectangle_5.png"} />
+          <SecondaryImage imageUrl={"/rectangle_3.png"} date={date} />
+          <SecondaryImage imageUrl={"/rectangle_4.png"} date={date} />
+          <SecondaryImage imageUrl={"/rectangle_5.png"} date={date} />
         </div>
       </div>
     </div>
   );
 }
 
-function SecondaryImage({ imageUrl }) {
+function SecondaryImage({ imageUrl, date }) {
   return (
     <div className={styles.secondary_image_container}>
       <img src={imageUrl} alt="" className={styles.secondary_image} />
@@ -70,7 +90,7 @@ function SecondaryImage({ imageUrl }) {
                 />
               </svg>
             </div>
-            <div className={styles.widget_text}>03. JUNE 2019</div>
+            <div className={styles.widget_text}>{date}</div>
           </div>
         </div>
       </div>
