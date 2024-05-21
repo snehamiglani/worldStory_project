@@ -53,9 +53,7 @@ export default function Footer() {
         <div className={styles.button} onClick={handleSubscribeClick}>
           SUBSCRIBE
         </div>
-        <div>
-          Button clicked {clickCount} times
-        </div>
+        
         <div
           style={{
             height: "1px",
