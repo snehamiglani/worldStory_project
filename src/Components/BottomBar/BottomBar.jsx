@@ -29,11 +29,7 @@ export default function BottomBar() {
           TRAVEL
         </div>
       </div>
-      {selectedSection && (
-        <div className={styles.message}>
-          You selected: {selectedSection}
-        </div>
-      )}
+  
     </div>
   );
 }
