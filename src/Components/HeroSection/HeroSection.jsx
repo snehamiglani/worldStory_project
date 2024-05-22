@@ -1,26 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
-  const [badgeText, setBadgeText] = useState("FASHION");
-  const [date, setDate] = useState("03. JUNE 2019");
-
-  useEffect(() => {
-    // Simulating asynchronous data fetching
-    const fetchData = () => {
-      setTimeout(() => {
-        setBadgeText("LIFESTYLE");
-        setDate("10. JUNE 2019");
-      }, 2000); // Delay of 2 seconds
-    };
-
-    fetchData();
-
-    // Cleanup function (optional)
-    return () => {
-      // Perform cleanup if necessary
-    };
-  }, []); // Empty dependency array to run effect only once
+// Empty dependency array to run effect only once
 
   return (
     <div className={styles.container}>

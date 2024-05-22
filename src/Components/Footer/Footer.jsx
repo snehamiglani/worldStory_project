@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const [clickCount, setClickCount] = useState(0);
-
-  const handleSubscribeClick = () => {
-    setClickCount(clickCount + 1);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.secondary_container}>
